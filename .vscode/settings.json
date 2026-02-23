@@ -1,0 +1,32 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "eslint.format.enable": true,
+  "eslint.useFlatConfig": true,
+  "eslint.validate": ["javascript", "typescript", "vue"],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "prettier.configPath": ".prettierrc",
+  "prettier.useEditorConfig": false,
+  "scss.lint.unknownAtRules": "ignore",
+  "search.exclude": {
+    "**/.nuxt": true,
+    "**/assets": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/output": true,
+    "yarn.lock": true
+  },
+  "tailwindCSS.classAttributes": ["class", "ui"],
+  "tailwindCSS.experimental.classRegex": [
+    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ]
+}

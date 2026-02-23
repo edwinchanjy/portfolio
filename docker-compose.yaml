@@ -1,0 +1,18 @@
+services:
+  portfolio:
+    image: ${DOCKER_IMAGE_NAME}:latest
+    container_name: portfolio
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: ${NODE_ENV}
+      NUXT_PUBLIC_URL: ${NUXT_PUBLIC_URL}
+      NITRO_HOST: 0.0.0.0
+      NITRO_PORT: 3000
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge

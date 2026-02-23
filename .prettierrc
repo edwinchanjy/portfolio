@@ -1,0 +1,26 @@
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 100,
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "semi": false,
+  "singleQuote": true,
+  "htmlWhitespaceSensitivity": "ignore",
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-classnames",
+    "prettier-plugin-merge"
+  ],
+  "importOrder": [
+    "assert",
+    "<THIRD_PARTY_MODULES>",
+    "^@vitejs/(.*)$",
+    "vitest-mock-extended",
+    "#(.*)$",
+    "#app",
+    "^[./]",
+    "^@/(.*)$"
+  ]
+}
