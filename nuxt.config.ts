@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@nuxtjs/i18n', '@pinia/nuxt'],
+  devtools: { enabled: true },
   app: {
     head: {
       title: 'Edwin Chan - Portfolio',
@@ -15,11 +17,32 @@ export default defineNuxtConfig({
             'Welcome to my portfolio! I am a passionate software developer with expertise in web development, mobile app development, and cloud computing. Explore my projects, skills, and experience to see how I can contribute to your next project.',
         },
       ],
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap',
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        },
+      ],
     },
   },
-  compatibilityDate: '2025-07-15',
   css: ['~/assets/css/main.css'],
-  devtools: { enabled: true },
+  compatibilityDate: '2025-07-15',
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        paths: {
+          '@': ['.'],
+          '@/*': ['./*'],
+        },
+      },
+    },
+  },
   eslint: {
     config: {
       tooling: true,
@@ -36,16 +59,5 @@ export default defineNuxtConfig({
     ],
     langDir: 'locales',
     defaultLocale: 'en',
-  },
-  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@nuxtjs/i18n', '@pinia/nuxt'],
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        paths: {
-          '@': ['.'],
-          '@/*': ['./*'],
-        },
-      },
-    },
   },
 })

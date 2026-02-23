@@ -6,8 +6,6 @@ services:
     ports:
       - '3000:3000'
     environment:
-      NODE_ENV: ${NODE_ENV}
-      NUXT_PUBLIC_URL: ${NUXT_PUBLIC_URL}
       NITRO_HOST: 0.0.0.0
       NITRO_PORT: 3000
     networks:
