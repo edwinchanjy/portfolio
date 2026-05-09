@@ -52,18 +52,35 @@
   },
   "experience": {
     "entry1": {
-      "period": "2021年7月 — 至今",
-      "role": "高级前端开发工程师",
-      "company": "现任公司",
-      "bullet1": "第一年：Flutter for Web（对，这东西存在）。",
-      "bullet2": "转型到 Nuxt + Pinia + Tailwind——现在的日常工具。",
-      "bullet3": "交付 Web3 流程：WalletConnect、MetaMask、智能合约调用。",
-      "bullet4": "加密结账、链上操作，让普通用户也能接受的钱包体验。"
+      "period": "2026年1月 — 至今",
+      "role": "高级软件工程师",
+      "company": "Davos Asia Capital Sdn Bhd",
+      "bullet1": "还在用 Nuxt + Pinia + Tailwind，但责任更多，头发更少了。",
+      "bullet2": "交付 Web3 流程：WalletConnect、MetaMask、智能合约调用。",
+      "bullet3": "加密结账、链上操作，让普通用户也能接受的钱包体验。",
+      "bullet4": "指导初级开发者、主导项目、配置 CI 脚本，同时努力维持代码库的整洁（大概）。",
+      "bullet5": "终于可以说 'LGTM' 而不用怀疑自己了。"
     },
     "entry2": {
+      "period": "2024年1月 — 2025年12月",
+      "role": "软件工程师",
+      "company": "Davos Asia Capital Sdn Bhd",
+      "bullet1": "转型到 Nuxt + Pinia + Tailwind——现在的日常工具。",
+      "bullet2": "定制 UI 组件，构建内部工具。",
+      "bullet3": "从零到一完成多个前端项目——从搭建仓库到上线部署。第一次总是最难的。"
+    },
+    "entry3": {
+      "period": "2021年7月 — 2023年12月",
+      "role": "前端开发工程师",
+      "company": "Davos Asia Capital Sdn Bhd",
+      "bullet1": "Flutter，但是做网页的。（对，这东西真的存在。）",
+      "bullet2": "为一家洗车企业构建了包含自定义图表、表格和表单的管理后台。",
+      "bullet3": "技术栈：Flutter、BloC。"
+    },
+    "entry4": {
       "period": "2020年9月 — 2021年6月",
       "role": "移动端开发工程师",
-      "company": "第一家公司",
+      "company": "BestWeb Technologies International Sdn Bhd",
       "bullet1": "用 Flutter 构建移动应用——iOS 和 Android 同一套代码。",
       "bullet2": "十个月。经典的第一份工作轨迹。"
     }

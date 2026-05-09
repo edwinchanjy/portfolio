@@ -66,11 +66,21 @@ interface Entry {
 const entries: Entry[] = [
   {
     key: 'entry1',
-    tags: ['Nuxt', 'Pinia', 'Tailwind', 'Flutter Web', 'Web3'],
-    bullets: 4,
+    tags: ['Nuxt', 'Pinia', 'Tailwind', 'Web3', 'MetaMask', 'WalletConnect', 'ethers.js'],
+    bullets: 5,
   },
   {
     key: 'entry2',
+    tags: ['Nuxt', 'Pinia', 'Tailwind', 'Web3', 'MetaMask', 'WalletConnect', 'ethers.js'],
+    bullets: 3,
+  },
+  {
+    key: 'entry3',
+    tags: ['Flutter Web', 'Dart'],
+    bullets: 3,
+  },
+  {
+    key: 'entry4',
     tags: ['Flutter', 'Dart', 'Mobile'],
     bullets: 2,
   },

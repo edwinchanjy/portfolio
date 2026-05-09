@@ -52,18 +52,35 @@
   },
   "experience": {
     "entry1": {
-      "period": "Jul 2021 — Present",
-      "role": "Senior Frontend Developer",
-      "company": "Current Company",
-      "bullet1": "First year: Flutter, but for the web. (Yes, that exists.)",
-      "bullet2": "Transitioned to Nuxt + Pinia + Tailwind — the daily tools now.",
-      "bullet3": "Shipped Web3 flows: WalletConnect, MetaMask, smart-contract calls.",
-      "bullet4": "Crypto checkout, on-chain actions, wallet UX that doesn't scare normies."
+      "period": "Jan 2026 — Present",
+      "role": "Senior Software Engineer",
+      "company": "Davos Asia Capital Sdn Bhd",
+      "bullet1": "Still rocking Nuxt + Pinia + Tailwind, but with more responsibility and slightly less hair.",
+      "bullet2": "Shipped Web3 flows: WalletConnect, MetaMask, smart-contract calls.",
+      "bullet3": "Crypto checkout, on-chain actions, wallet UX that doesn't scare normies.",
+      "bullet4": "Mentoring juniors, leading projects, setting up CI scripts and trying to keep the codebase clean-ish.",
+      "bullet5": "Can finally say 'LGTM' without second-guessing myself."
     },
     "entry2": {
+      "period": "Jan 2024 — Dec 2025",
+      "role": "Software Engineer",
+      "company": "Davos Asia Capital Sdn Bhd",
+      "bullet1": "Transitioned to Nuxt + Pinia + Tailwind — the daily tools now.",
+      "bullet2": "Customized UI components, built internal tools.",
+      "bullet3": "Built several frontend projects end-to-end, from setting up the repo to deploying to production. The first time is always the hardest."
+    },
+    "entry3": {
+      "period": "Jul 2021 — Dec 2023",
+      "role": "Frontend Developer",
+      "company": "Davos Asia Capital Sdn Bhd",
+      "bullet1": "Flutter, but for the web. (Yes, that exists.)",
+      "bullet2": "Built a Dashboard with customized charts, tables, and forms for a Car Wash business.",
+      "bullet3": "Tech stack: Flutter, BloC."
+    },
+    "entry4": {
       "period": "Sep 2020 — Jun 2021",
       "role": "Mobile Developer",
-      "company": "First Company",
+      "company": "BestWeb Technologies International Sdn Bhd",
       "bullet1": "Built mobile apps in Flutter — iOS + Android from one codebase.",
       "bullet2": "Ten months. The classic first-job arc."
     }
