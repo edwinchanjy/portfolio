@@ -1,0 +1,121 @@
+{
+  "common": {
+    "name": "Edwin Chan Jia Yu"
+  },
+  "nav": {
+    "intro": "简介",
+    "about": "关于",
+    "experience": "经历",
+    "stack": "技术栈",
+    "web3": "Web3",
+    "homelab": "家庭实验室",
+    "ai": "AI 工作流",
+    "contact": "联系"
+  },
+  "sidebar": {
+    "role": "高级前端开发工程师",
+    "location": "亚洲 · UTC+8",
+    "statusAvailable": "可入职",
+    "links": "链接",
+    "lightModeTitle": "切换浅色模式",
+    "lightModeToast": "这里不搞浅色模式。",
+    "lightModeToast2": "我们不搞浅色模式。它会引来Bug。"
+  },
+  "mobile": {
+    "openMenu": "打开导航菜单",
+    "closeMenu": "关闭导航菜单"
+  },
+  "hero": {
+    "headline1": "高级前端开发工程师, 我觉得。",
+    "headline2": "曾经花了3小时调试一个分号问题。",
+    "headline3": "周五部署，幸存下来。大部分时间。",
+    "headline4": "什么都自托管。结果花更多钱了。",
+    "lede": "高级前端开发工程师 · 5年以上经验。我写的代码偶尔会按我的意愿运行。擅长将 Figma 设计转化为“差不多”的实现。",
+    "ctaEmail": "联系我",
+    "ctaGithub": "GitHub ↗",
+    "ctaLinkedin": "LinkedIn ↗"
+  },
+  "about": {
+    "heading1": "五年了。",
+    "heading2": "这是留下来的东西。",
+    "bio1": "从移动端开始，使用 Flutter——一套代码，两平台，略微的绝望。十个月后我转向了 Flutter-for-web。是的，那东西存在。不，我不想谈论它。",
+    "bio2": "最终找到了 Vue 和 Nuxt，从此再也没有回头，部分是因为喜欢，部分是因为 Flutter-for-web 已经在我身后，我拒绝与它有任何眼神交流。（请别再问我了）。",
+    "bio3": "现在我在交付复杂的 Web 应用和加密原生流程：WalletConnect 配对、MetaMask 登录、链上读写，以及一个让 gas 费感觉还可以接受的结账流程。",
+    "bio4": "下班后：用 docker-compose 跑着 Jellyfin、arr 系列和 Immich，全部通过 Tailscale 访问。还有一套 Claude + n8n + Obsidian 的信息过滤流水线。",
+    "yearsLabel": "年实战经验",
+    "stacksLabel": "掌握的技术栈",
+    "servicesLabel": "自托管服务",
+    "bugsTicketedLabel": "已记录的错误"
+  },
+  "experience": {
+    "entry1": {
+      "period": "2021年7月 — 至今",
+      "role": "高级前端开发工程师",
+      "company": "现任公司",
+      "bullet1": "第一年：Flutter for Web（对，这东西存在）。",
+      "bullet2": "转型到 Nuxt + Pinia + Tailwind——现在的日常工具。",
+      "bullet3": "交付 Web3 流程：WalletConnect、MetaMask、智能合约调用。",
+      "bullet4": "加密结账、链上操作，让普通用户也能接受的钱包体验。"
+    },
+    "entry2": {
+      "period": "2020年9月 — 2021年6月",
+      "role": "移动端开发工程师",
+      "company": "第一家公司",
+      "bullet1": "用 Flutter 构建移动应用——iOS 和 Android 同一套代码。",
+      "bullet2": "十个月。经典的第一份工作轨迹。"
+    }
+  },
+  "stack": {
+    "dailyLabel": "日常",
+    "dailySub": "主力工具",
+    "comfyLabel": "熟练",
+    "comfySub": "随时可以上手",
+    "curiousLabel": "探索中",
+    "curiousSub": "下班后的研究"
+  },
+  "web3": {
+    "heading": "链上，已上线。",
+    "desc": "已构建并上线的加密原生流程——WalletConnect 配对、MetaMask 登录、链上读写，以及一个让用户从「gas 是什么」到「已签名确认」只需两步的结账体验。",
+    "item1": "WalletConnect — 多钱包配对流程",
+    "item2": "MetaMask — 登录、交易、切换链",
+    "item3": "通过 ethers 读写智能合约",
+    "item4": "加密结账体验（大部分是等待状态）"
+  },
+  "homelab": {
+    "heading": "全部自托管。",
+    "desc": "Jellyfin + arr 系列负责媒体，Immich 存储所有照片（因为苹果觉得 50GB 很够用）。全部 docker-compose，通过 Tailscale 访问——不需要端口转发这种把戏。",
+    "uptime": "在线时长：67天。",
+    "p1": "{service} 负责媒体——因为同时订阅1000万个流媒体服务真的太有趣了！",
+    "p2": "{service} 存储所有照片，我一分钱都不打算给苹果。",
+    "p3": "{service} 负责额外的自动化，这样我就能收集最喜欢的表情包，然后离线观看。",
+    "p4": "全部用 {compose} 部署，通过 {vpn} 访问——不需要端口转发这种把戏。"
+  },
+  "ai": {
+    "heading1": "少刷无用信息，",
+    "heading2": "多获取有效信号。",
+    "desc": "我用来阅读互联网而不被淹没的三个工具。它们碰巧配合得很好——但每一个单独使用也很有价值。",
+    "n8nName": "n8n",
+    "n8nTag": "工作流自动化",
+    "n8nDesc": "自托管的自动化工具，负责调度和路由。定时拉取 RSS、邮件列表和我关注的页面——无需手动检查。",
+    "n8nSolo": "单独使用时，适合任何你本来要手动重复做的任务。",
+    "claudeName": "Claude",
+    "claudeTag": "AI 助手",
+    "claudeDesc": "处理信息洪流。分类、汇总、过滤噪音。将40条内容变成8条值得阅读的。",
+    "claudeSolo": "单独使用时，是很好的思考伙伴、代码审阅者或研究助手。",
+    "obsidianName": "Obsidian",
+    "obsidianTag": "知识库",
+    "obsidianDesc": "所有内容的归宿——带链接、有日期、可搜索。笔记之间相互连接，而不是堆在文件夹里腐烂。",
+    "obsidianSolo": "单独使用时，是很好的个人维基、日记或第二大脑。"
+  },
+  "contact": {
+    "heading": "打个招呼。",
+    "emailLabel": "邮箱",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn",
+    "fortuneLabel": "fortune ›",
+    "fortuneReroll": "重新抽签"
+  },
+  "footer": {
+    "copyright": "© {year} Edwin Chan Jia Yu"
+  }
+}

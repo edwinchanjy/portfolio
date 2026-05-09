@@ -1,1 +1,121 @@
-{}
+{
+  "common": {
+    "name": "Edwin Chan Jia Yu"
+  },
+  "nav": {
+    "intro": "Intro",
+    "about": "About",
+    "experience": "Experience",
+    "stack": "Stack",
+    "web3": "Web3",
+    "homelab": "Homelab",
+    "ai": "AI Workflow",
+    "contact": "Contact"
+  },
+  "sidebar": {
+    "role": "Senior Frontend Developer",
+    "location": "Asia · UTC+8",
+    "statusAvailable": "available",
+    "links": "Links",
+    "lightModeTitle": "Switch to light mode",
+    "lightModeToast": "No Light Mode Here.",
+    "lightModeToast2": "We don't do light mode here. It attracts bugs."
+  },
+  "mobile": {
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
+  },
+  "hero": {
+    "headline1": "Senior Frontend Developer, I think.",
+    "headline2": "Once spent 3 hours debugging a semicolon issue.",
+    "headline3": "Have deployed on Friday. Have survived. Mostly.",
+    "headline4": "Self-hosts everything. Ends up paying more.",
+    "lede": "Senior Frontend Developer · 5+ years of experience of centering div. I write code that occasionally does what I want. Specialized in turning Figma designs into 'close enough' implementations.",
+    "ctaEmail": "Get in touch",
+    "ctaGithub": "GitHub ↗",
+    "ctaLinkedin": "LinkedIn ↗"
+  },
+  "about": {
+    "heading1": "Five years in.",
+    "heading2": "Here's what stuck.",
+    "bio1": "Started in mobile with Flutter — one codebase, two platforms, mild despair. Ten months later I moved to Flutter-for-web. Yes, that's a thing. No, I don't want to talk about it.",
+    "bio2": "Eventually found Vue and Nuxt and never looked back, partly out of love, partly because Flutter-for-web is behind me and I refuse to make eye contact. (Please stop asking about it).",
+    "bio3": "These days I ship complex web apps and crypto-native flows: WalletConnect pairings that pair on the second try, MetaMask sign-in that doesn't popup, on-chain reads & writes, and a checkout flow with the lowest (highest) gas fee you can ever imagine.",
+    "bio4": "Off-clock: a homelab running Jellyfin + the *arr stack + Immich, all docker-compose'd behind Tailscale — works flawlessly until it doesn't, then works again (Nothing a hard reset can't fix). Also a Claude + n8n + Obsidian pipeline that reads the internet for me, so I can spend that saved time on… more internet.",
+    "yearsLabel": "years shipped",
+    "stacksLabel": "stacks mastered",
+    "servicesLabel": "services self-hosted",
+    "bugsTicketedLabel": "bugs ticketed"
+  },
+  "experience": {
+    "entry1": {
+      "period": "Jul 2021 — Present",
+      "role": "Senior Frontend Developer",
+      "company": "Current Company",
+      "bullet1": "First year: Flutter, but for the web. (Yes, that exists.)",
+      "bullet2": "Transitioned to Nuxt + Pinia + Tailwind — the daily tools now.",
+      "bullet3": "Shipped Web3 flows: WalletConnect, MetaMask, smart-contract calls.",
+      "bullet4": "Crypto checkout, on-chain actions, wallet UX that doesn't scare normies."
+    },
+    "entry2": {
+      "period": "Sep 2020 — Jun 2021",
+      "role": "Mobile Developer",
+      "company": "First Company",
+      "bullet1": "Built mobile apps in Flutter — iOS + Android from one codebase.",
+      "bullet2": "Ten months. The classic first-job arc."
+    }
+  },
+  "stack": {
+    "dailyLabel": "Daily",
+    "dailySub": "Bread & butter",
+    "comfyLabel": "Comfy",
+    "comfySub": "Happy to switch in",
+    "curiousLabel": "Curious",
+    "curiousSub": "Off-clock exploration"
+  },
+  "web3": {
+    "heading": "On-chain, in production.",
+    "desc": "Crypto-native flows built and shipped — WalletConnect pairing, MetaMask sign-in, on-chain reads & writes, and a checkout that goes from \"what is gas\" to \"signed and confirmed\" in two taps.",
+    "item1": "WalletConnect — multi-wallet pairing flows",
+    "item2": "MetaMask — sign-in, transactions, chain-switching",
+    "item3": "Smart contract reads + writes via ethers",
+    "item4": "Crypto checkout UX (it's mostly waiting states)"
+  },
+  "homelab": {
+    "heading": "Self-hosted, all of it.",
+    "desc": "Jellyfin + the *arr stack for media. Immich for every photo, because Apple thinks 50GB is generous. All docker-compose, fronted by Tailscale — no port-forwarding theatre.",
+    "uptime": "Uptime: 67d.",
+    "p1": "{service} stack for media, because subscribing to 10 million different streaming services is so fun!",
+    "p2": "{service} for every photo — I'm not paying Apple a single cent.",
+    "p3": "{service} for extra automation, so I can collect my favourite memes and watch them offline.",
+    "p4": "All {compose}, fronted by {vpn} — no port-forwarding theatre."
+  },
+  "ai": {
+    "heading1": "Less doomscroll,",
+    "heading2": "more signal.",
+    "desc": "Three tools I use to read the internet without drowning in it. They happen to work well together — but each pulls its weight on its own.",
+    "n8nName": "n8n",
+    "n8nTag": "workflow automation",
+    "n8nDesc": "Self-hosted automation that schedules and routes. Pulls RSS feeds, newsletters, and pages, so I can spend more time online...offline.",
+    "n8nSolo": "Useful on its own for any repeatable task you'd otherwise do by hand.",
+    "claudeName": "Claude",
+    "claudeTag": "ai assistant",
+    "claudeDesc": "Hey Claude, fix it for me. Make no mistakes.",
+    "claudeSolo": "Useful on its own as a thinking partner, code reviewer, or research assistant.",
+    "obsidianName": "Obsidian",
+    "obsidianTag": "knowledge base",
+    "obsidianDesc": "Linked everything I need to remember, because I don't even remember what I had for breakfast.",
+    "obsidianSolo": "Useful on its own as a personal wiki, journal, or second brain."
+  },
+  "contact": {
+    "heading": "Say hi! But like with text. Don't actually call me.",
+    "emailLabel": "Email",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn",
+    "fortuneLabel": "fortune ›",
+    "fortuneReroll": "re-roll"
+  },
+  "footer": {
+    "copyright": "© {year} Edwin Chan Jia Yu"
+  }
+}

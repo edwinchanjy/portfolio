@@ -1,2 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @import 'tailwindcss';
 @import '@nuxt/ui';
+
+@theme static {
+  /* Fonts */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Typography additions */
+  --text-2xs: 0.625rem;
+  --text-label: 0.65625rem;
+  --text-section-h3: 2rem;
+  --text-hero-stat: 2.75rem;
+
+  /* Tracking additions */
+  --tracking-display: -0.035em;
+  --tracking-14: 0.14em;
+}
+
+:root {
+  /* ─── Nuxt UI semantic overrides — permanent dark theme ─── */
+  /* Maps the --ui-* variables that Nuxt UI components reference internally */
+  --ui-bg: #080d14;
+  --ui-bg-muted: #0d1520;
+  --ui-bg-elevated: #12202e;
+  --ui-bg-accented: #12202e;
+  --ui-bg-inverted: #dce9f7;
+
+  --ui-border: #111e2e;
+  --ui-border-muted: #111e2e;
+  --ui-border-accented: #182840;
+  --ui-border-inverted: #dce9f7;
+
+  --ui-text-highlighted: #dce9f7;
+  --ui-text: #7a9dc0;
+  --ui-text-toned: #5a87b0;
+  --ui-text-muted: #5a87b0;
+  --ui-text-dimmed: #3d5f7a;
+  --ui-text-inverted: #060b10;
+
+  --ui-primary: #4a9eff;
+  --ui-color-primary-400: #4a9eff;
+  --ui-color-primary-500: #4a9eff;
+
+  --ui-success: #3cd68a;
+  --ui-warning: #f0c040;
+  --ui-error: #ff5050;
+}
+
+/* ─── Global base ─────────────────────────────────────────────── */
+
+html,
+body {
+  background-color: var(--ui-bg);
+  color: var(--ui-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom text selection */
+::selection {
+  background-color: rgba(74, 158, 255, 0.25);
+  color: var(--ui-text-highlighted);
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ui-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ui-border-accented);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ui-text-dimmed);
+}
+
+/* ─── Fade-up scroll animation ────────────────────────────────── */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s cubic-bezier(0.2, 0.8, 0.3, 1),
+    transform 0.6s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Staggered fade-up ───────────────────────────────────────── */
+
+.fade-up-stagger > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s cubic-bezier(0.2, 0.8, 0.3, 1),
+    transform 0.6s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.fade-up-stagger.is-visible > *:nth-child(1) {
+  transition-delay: 0ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-stagger.is-visible > *:nth-child(2) {
+  transition-delay: 60ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-stagger.is-visible > *:nth-child(3) {
+  transition-delay: 120ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-stagger.is-visible > *:nth-child(4) {
+  transition-delay: 180ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-stagger.is-visible > *:nth-child(5) {
+  transition-delay: 240ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-stagger.is-visible > *:nth-child(6) {
+  transition-delay: 300ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-stagger.is-visible > *:nth-child(7) {
+  transition-delay: 360ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-stagger.is-visible > *:nth-child(8) {
+  transition-delay: 420ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-stagger.is-visible > *:nth-child(n + 9) {
+  transition-delay: 480ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Animations ──────────────────────────────────────────────── */
+
+@keyframes dot-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
+
+.dot-pulse {
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+
+/* Slide-up keyframes for cycling headline */
+@keyframes slide-up-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up-in {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.headline-slide-out {
+  animation: slide-up-out 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.headline-slide-in {
+  animation: slide-up-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ─── Card hover lift ─────────────────────────────────────────── */
+
+.card-hover {
+  transition:
+    background-color 0.14s ease,
+    border-color 0.14s ease,
+    transform 0.14s ease;
+}
+
+.card-hover:hover {
+  background-color: var(--ui-bg-elevated);
+  border-color: var(--ui-border-accented);
+  transform: translateY(-1px);
+}
+
+/* ─── Sidebar nav active dot ──────────────────────────────────── */
+
+.nav-active-dot {
+  position: relative;
+}
+
+.nav-active-dot::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  background-color: var(--ui-primary);
+  border-radius: 2px;
+}
+
+/* ─── Tooltip base ────────────────────────────────────────────── */
+
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ui-bg-elevated);
+  border: 1px solid var(--ui-border-accented);
+  color: var(--ui-text);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+}

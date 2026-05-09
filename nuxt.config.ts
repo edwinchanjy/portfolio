@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@nuxtjs/i18n', '@pinia/nuxt'],
+  devtools: { enabled: true },
   app: {
     head: {
       title: 'Edwin Chan - Portfolio',
@@ -17,9 +19,18 @@ export default defineNuxtConfig({
       ],
     },
   },
-  compatibilityDate: '2025-07-15',
   css: ['~/assets/css/main.css'],
-  devtools: { enabled: true },
+  compatibilityDate: '2025-07-15',
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        paths: {
+          '@': ['.'],
+          '@/*': ['./*'],
+        },
+      },
+    },
+  },
   eslint: {
     config: {
       tooling: true,
@@ -32,20 +43,17 @@ export default defineNuxtConfig({
   i18n: {
     locales: [
       { code: 'en', file: 'en.json' },
-      { code: 'cn', file: 'cn.json' },
+      { code: 'zh', file: 'zh.json' },
     ],
     langDir: 'locales',
     defaultLocale: 'en',
   },
-  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@nuxtjs/i18n', '@pinia/nuxt'],
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        paths: {
-          '@': ['.'],
-          '@/*': ['./*'],
-        },
+  icon: {
+    customCollections: [
+      {
+        prefix: 'local',
+        dir: './app/assets/icons',
       },
-    },
+    ],
   },
 })
