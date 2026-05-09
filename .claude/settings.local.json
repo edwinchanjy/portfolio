@@ -16,7 +16,9 @@
       "WebSearch",
       "Bash(node -e \"const p = require\\('./node_modules/@nuxt/icon/package.json'\\); console.log\\(p.version\\)\")",
       "Bash(xargs grep -l \"_nuxt_icon\\\\|nuxtIcon\\\\|iconEndpoint\")",
-      "Bash(xargs grep -l \"_nuxt_icon\\\\|nuxt_icon\")"
+      "Bash(xargs grep -l \"_nuxt_icon\\\\|nuxt_icon\")",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\edwin\\\\Desktop\\\\projects\\\\1\\\\portfolio\\\\app\" -Recurse -Include \"*.vue\", \"*.ts\", \"*.tsx\")",
+      "Bash(Select-Object -ExpandProperty FullName)"
     ]
   }
 }

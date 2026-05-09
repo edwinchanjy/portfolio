@@ -7,10 +7,14 @@
     "about": "关于",
     "experience": "经历",
     "stack": "技术栈",
-    "web3": "Web3",
+    "projects": "项目",
     "homelab": "家庭实验室",
     "ai": "AI 工作流",
     "contact": "联系"
+  },
+  "projects": {
+    "heading": "一些我设法交付的项目。",
+    "desc": "这不是一个详尽的列表，但有一些亮点。从加密原生流程到世界上最基本的待办应用。"
   },
   "sidebar": {
     "role": "高级前端开发工程师",
@@ -22,8 +26,7 @@
     "lightModeToast2": "我们不搞浅色模式。它会引来Bug。"
   },
   "mobile": {
-    "openMenu": "打开导航菜单",
-    "closeMenu": "关闭导航菜单"
+    "openMenu": "打开导航菜单"
   },
   "hero": {
     "headline1": "高级前端开发工程师, 我觉得。",
@@ -73,18 +76,8 @@
     "curiousLabel": "探索中",
     "curiousSub": "下班后的研究"
   },
-  "web3": {
-    "heading": "链上，已上线。",
-    "desc": "已构建并上线的加密原生流程——WalletConnect 配对、MetaMask 登录、链上读写，以及一个让用户从「gas 是什么」到「已签名确认」只需两步的结账体验。",
-    "item1": "WalletConnect — 多钱包配对流程",
-    "item2": "MetaMask — 登录、交易、切换链",
-    "item3": "通过 ethers 读写智能合约",
-    "item4": "加密结账体验（大部分是等待状态）"
-  },
   "homelab": {
     "heading": "全部自托管。",
-    "desc": "Jellyfin + arr 系列负责媒体，Immich 存储所有照片（因为苹果觉得 50GB 很够用）。全部 docker-compose，通过 Tailscale 访问——不需要端口转发这种把戏。",
-    "uptime": "在线时长：67天。",
     "p1": "{service} 负责媒体——因为同时订阅1000万个流媒体服务真的太有趣了！",
     "p2": "{service} 存储所有照片，我一分钱都不打算给苹果。",
     "p3": "{service} 负责额外的自动化，这样我就能收集最喜欢的表情包，然后离线观看。",
@@ -111,9 +104,7 @@
     "heading": "打个招呼。",
     "emailLabel": "邮箱",
     "githubLabel": "GitHub",
-    "linkedinLabel": "LinkedIn",
-    "fortuneLabel": "fortune ›",
-    "fortuneReroll": "重新抽签"
+    "linkedinLabel": "LinkedIn"
   },
   "footer": {
     "copyright": "© {year} Edwin Chan Jia Yu"

@@ -61,13 +61,11 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
-
 const headlines = computed(() => [
-  t('hero.headline1'),
-  t('hero.headline2'),
-  t('hero.headline3'),
-  t('hero.headline4'),
+  $t('hero.headline1'),
+  $t('hero.headline2'),
+  $t('hero.headline3'),
+  $t('hero.headline4'),
 ])
 
 const currentIndex = ref(0)

@@ -45,13 +45,11 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
-
 const stats = computed(() => [
-  { key: 'years', value: '5+', label: t('about.yearsLabel') },
-  { key: 'stacks', value: '2', label: t('about.stacksLabel') },
-  { key: 'services', value: '10+', label: t('about.servicesLabel') },
-  { key: 'bugs', value: '∞', label: t('about.bugsTicketedLabel') },
+  { key: 'years', value: '5+', label: $t('about.yearsLabel') },
+  { key: 'stacks', value: '2', label: $t('about.stacksLabel') },
+  { key: 'services', value: '10+', label: $t('about.servicesLabel') },
+  { key: 'bugs', value: '∞', label: $t('about.bugsTicketedLabel') },
 ])
 </script>
 

@@ -13,7 +13,8 @@
         <HomeAbout />
         <HomeExperience />
         <HomeStack />
-        <HomeWeb3 />
+        <!-- <HomeWeb3 /> -->
+        <HomeProjects />
         <HomeHomelab />
         <HomeAiWorkflow />
         <HomeContact />
@@ -26,7 +27,7 @@
 <script setup lang="ts">
 useHead({ title: 'Edwin Chan Jia Yu — Frontend Developer' })
 
-const sectionIds = ['intro', 'about', 'exp', 'stack', 'web3', 'homelab', 'vault', 'contact']
+const sectionIds = ['intro', 'about', 'exp', 'stack', 'projects', 'homelab', 'vault', 'contact']
 const {
   activeSection,
   init: initScrollspy,

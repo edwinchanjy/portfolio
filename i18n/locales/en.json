@@ -7,10 +7,14 @@
     "about": "About",
     "experience": "Experience",
     "stack": "Stack",
-    "web3": "Web3",
+    "projects": "Projects",
     "homelab": "Homelab",
     "ai": "AI Workflow",
     "contact": "Contact"
+  },
+  "projects": {
+    "heading": "A few things I've somehow managed to ship.",
+    "desc": "Not an exhaustive list, but a few highlights. From crypto-native flows to the world's most basic todo app."
   },
   "sidebar": {
     "role": "Senior Frontend Developer",
@@ -22,8 +26,7 @@
     "lightModeToast2": "We don't do light mode here. It attracts bugs."
   },
   "mobile": {
-    "openMenu": "Open navigation menu",
-    "closeMenu": "Close navigation menu"
+    "openMenu": "Open navigation menu"
   },
   "hero": {
     "headline1": "Senior Frontend Developer, I think.",
@@ -73,18 +76,8 @@
     "curiousLabel": "Curious",
     "curiousSub": "Off-clock exploration"
   },
-  "web3": {
-    "heading": "On-chain, in production.",
-    "desc": "Crypto-native flows built and shipped — WalletConnect pairing, MetaMask sign-in, on-chain reads & writes, and a checkout that goes from \"what is gas\" to \"signed and confirmed\" in two taps.",
-    "item1": "WalletConnect — multi-wallet pairing flows",
-    "item2": "MetaMask — sign-in, transactions, chain-switching",
-    "item3": "Smart contract reads + writes via ethers",
-    "item4": "Crypto checkout UX (it's mostly waiting states)"
-  },
   "homelab": {
     "heading": "Self-hosted, all of it.",
-    "desc": "Jellyfin + the *arr stack for media. Immich for every photo, because Apple thinks 50GB is generous. All docker-compose, fronted by Tailscale — no port-forwarding theatre.",
-    "uptime": "Uptime: 67d.",
     "p1": "{service} stack for media, because subscribing to 10 million different streaming services is so fun!",
     "p2": "{service} for every photo — I'm not paying Apple a single cent.",
     "p3": "{service} for extra automation, so I can collect my favourite memes and watch them offline.",
@@ -111,9 +104,7 @@
     "heading": "Say hi! But like with text. Don't actually call me.",
     "emailLabel": "Email",
     "githubLabel": "GitHub",
-    "linkedinLabel": "LinkedIn",
-    "fortuneLabel": "fortune ›",
-    "fortuneReroll": "re-roll"
+    "linkedinLabel": "LinkedIn"
   },
   "footer": {
     "copyright": "© {year} Edwin Chan Jia Yu"

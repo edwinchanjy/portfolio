@@ -1,143 +1,86 @@
 <template>
-  <!-- TODO: REFACTOR THIS WHOLE COMPONENT -->
-  <section id="projects" class="fade-up px-8 py-20" style="background-color: var(--bg-1)">
-    <div class="mx-auto w-full max-w-3xl">
-      <!-- Section label -->
-      <p
-        class="text-label tracking-14 mb-4 font-medium uppercase"
-        style="color: var(--text-3); font-family: var(--font-mono)"
+  <section id="projects" class="fade-up mb-20 scroll-mt-8">
+    <!-- Section header -->
+    <div class="border-default mb-8 flex items-baseline gap-3.5 border-b pb-3.5">
+      <span class="text-label tracking-14 text-dimmed font-mono">05</span>
+      <span class="font-display text-muted text-xs font-semibold tracking-widest uppercase">
+        Projects
+      </span>
+    </div>
+
+    <h3
+      class="font-display text-section-h3 text-highlighted mb-3.5 leading-tight font-bold
+        tracking-tight"
+    >
+      {{ $t('projects.heading') }}
+    </h3>
+    <p class="text-default mb-5 text-base leading-relaxed">{{ $t('projects.desc') }}</p>
+
+    <!-- 2×2 cards -->
+    <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+      <UCard
+        v-for="(project, i) in projects"
+        :key="i"
+        class="card-hover"
+        :ui="{
+          root: 'bg-muted border border-default rounded-lg card-hover',
+          body: 'py-3.5 px-4 sm:py-3.5 sm:px-4',
+        }"
       >
-        {{ $t('projects.sectionLabel') }}
-      </p>
-
-      <h2
-        class="mb-2 text-3xl font-bold"
-        style="color: var(--text-1); font-family: var(--font-display); letter-spacing: -0.025em"
-      >
-        {{ $t('projects.heading') }}
-      </h2>
-      <p class="mb-12 text-base" style="color: var(--text-3)">
-        {{ $t('projects.subtext') }}
-      </p>
-
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
-        <article
-          v-for="project in projects"
-          :key="project.key"
-          class="card-hover flex flex-col rounded-lg p-5"
-          style="background-color: var(--bg-2); border: 1px solid var(--line-1)"
-        >
-          <!-- Header -->
-          <div class="mb-3 flex items-start justify-between gap-3">
-            <h3
-              class="text-base font-semibold"
-              style="
-                color: var(--text-1);
-                font-family: var(--font-display);
-                letter-spacing: -0.01em;
-              "
-            >
-              {{ $t(project.nameKey) }}
-            </h3>
-            <div class="flex shrink-0 items-center gap-2">
-              <a
-                v-if="project.github"
-                :href="project.github"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="transition-colors duration-150"
-                :style="`color: var(--text-4);`"
-                :aria-label="$t('projects.githubLink')"
-              >
-                <UIcon name="i-lucide-github" class="h-4 w-4 hover:text-[color:var(--text-2)]" />
-              </a>
-              <a
-                v-if="project.live"
-                :href="project.live"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="transition-colors duration-150"
-                :style="`color: var(--text-4);`"
-                :aria-label="$t('projects.liveLink')"
-              >
-                <UIcon
-                  name="i-lucide-external-link"
-                  class="h-4 w-4 hover:text-[color:var(--text-2)]"
-                />
-              </a>
-            </div>
-          </div>
-
-          <!-- Description -->
-          <p
-            class="mb-4 flex-1 text-sm leading-relaxed"
-            style="color: var(--text-2); line-height: 1.75"
+        <!-- Header -->
+        <div class="mb-3 flex items-start justify-between gap-3">
+          <h3
+            class="text-base font-semibold"
+            style="color: var(--text-1); font-family: var(--font-display); letter-spacing: -0.01em"
           >
-            {{ $t(project.descKey) }}
-          </p>
+            {{ project.name }}
+          </h3>
+        </div>
 
-          <!-- Tech chips -->
-          <div class="flex flex-wrap gap-1.5">
-            <span
-              v-for="tech in project.tech"
-              :key="tech"
-              class="rounded px-2 py-0.5 text-xs"
-              style="
-                background-color: var(--bg-inset);
-                color: var(--text-3);
-                font-family: var(--font-mono);
-                border: 1px solid var(--line-1);
-              "
-            >
-              {{ tech }}
-            </span>
-          </div>
-        </article>
-      </div>
+        <!-- Description -->
+        <p
+          class="mb-4 flex-1 text-sm leading-relaxed"
+          style="color: var(--text-2); line-height: 1.75"
+        >
+          {{ project.desc }}
+        </p>
+
+        <!-- Tech chips -->
+        <div class="flex flex-wrap gap-1.5">
+          <UBadge v-for="tech in project.tech" :key="tech" variant="subtle">
+            {{ tech }}
+          </UBadge>
+        </div>
+      </UCard>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-interface Project {
-  key: string
-  nameKey: string
-  descKey: string
-  tech: string[]
-  github?: string
-  live?: string
-  meta?: string
-}
-
-const projects: Project[] = [
+const projects = [
   {
-    key: 'chainvault',
-    nameKey: 'projects.chainvault.name',
-    descKey: 'projects.chainvault.desc',
-    tech: ['Solidity', 'React', 'ethers.js', 'TypeScript'],
-    github: 'https://github.com/edwinchan/chainvault',
+    key: 'e03',
+    name: 'e03',
+    desc: 'An E-commerce web app built with Nuxt 3, featuring crypto as a payment.',
+    tech: ['Nuxt', 'ethers.js', 'Wallet Connect', 'MetaMask', 'TypeScript'],
   },
   {
-    key: 'devflow',
-    nameKey: 'projects.devflow.name',
-    descKey: 'projects.devflow.desc',
-    tech: ['Vue', 'Nuxt', 'Go', 'PostgreSQL'],
-    github: 'https://github.com/edwinchan/devflow',
-    live: 'https://devflow.edwinchan.dev',
+    key: 'nexus-realty-hub',
+    name: 'Nexus Realty Hub',
+    desc: 'Crypto-based real estate investment built with Nuxt 3, integrating blockchain for secure transactions.',
+    tech: ['Nuxt', 'ethers.js', 'Wallet Connect', 'MetaMask', 'TypeScript'],
   },
   {
-    key: 'automate',
-    nameKey: 'projects.automate.name',
-    descKey: 'projects.automate.desc',
-    tech: ['Python', 'FastAPI', 'OpenAI', 'Redis'],
-    github: 'https://github.com/edwinchan/automate',
+    key: 'travel-log',
+    name: 'Travel Log',
+    desc: 'An Itinerary planner and journal app built with Nuxt 3, allowing users to document and share their travel experiences.',
+    tech: ['Nuxt', 'TypeScript', 'Python', 'Flask', 'SQLite'],
   },
   {
-    key: 'pocketdb',
-    nameKey: 'projects.pocketdb.name',
-    descKey: 'projects.pocketdb.desc',
-    tech: ['Go', 'C', 'Embedded'],
-    github: 'https://github.com/edwinchan/pocketdb',
+    key: 'survey-app',
+    name: 'Survey App',
+    desc: 'A survey application built with Nuxt 3, allowing users to create and participate in surveys.',
+    tech: ['Nuxt', 'Angular', 'NestJs', 'SurveyJs'],
   },
 ]
 </script>

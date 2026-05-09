@@ -119,7 +119,7 @@ const navItems = [
   { id: 'about', key: 'about', num: '02' },
   { id: 'exp', key: 'experience', num: '03' },
   { id: 'stack', key: 'stack', num: '04' },
-  { id: 'web3', key: 'web3', num: '05' },
+  { id: 'projects', key: 'projects', num: '05' },
   { id: 'homelab', key: 'homelab', num: '06' },
   { id: 'vault', key: 'ai', num: '07' },
   { id: 'contact', key: 'contact', num: '08' },
