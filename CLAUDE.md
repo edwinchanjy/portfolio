@@ -9,10 +9,10 @@ pnpm dev          # Start dev server at http://localhost:3000
 pnpm build        # Production build
 pnpm preview      # Preview production build locally
 pnpm lint         # Run ESLint
-pnpm typecheck    # TypeScript type checking
+pnpm type_check   # TypeScript type checking
 ```
 
-No test suite is configured. CI runs `lint` + `typecheck` on push.
+No test suite is configured. CI (push to `main`) builds a Docker image and deploys to a VPS — it does not run `lint` or `type_check`, so run both locally before pushing.
 
 ## Canonical Reference Implementation
 
