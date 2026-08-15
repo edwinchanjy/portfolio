@@ -37,6 +37,15 @@
         {{ $t('hero.ctaEmail') }}
       </a>
       <a
+        href="/edwin-chan-jia-yu-resume.pdf"
+        download=""
+        class="border-accented bg-muted text-default hover:border-accented hover:bg-elevated
+          hover:text-highlighted inline-flex cursor-pointer items-center gap-1.5 rounded-md border
+          px-3.5 py-1.5 font-sans text-sm no-underline transition-colors"
+      >
+        {{ $t('hero.ctaResume') }}
+      </a>
+      <a
         href="https://github.com/edwinchanjy"
         target="_blank"
         rel="noreferrer"

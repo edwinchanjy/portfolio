@@ -89,16 +89,17 @@
         </div>
         <a
           v-for="lk in links"
-          :key="lk.label"
+          :key="lk.labelKey"
           :href="lk.href"
-          :target="lk.href.startsWith('mailto') ? undefined : '_blank'"
+          :target="lk.download || lk.href.startsWith('mailto') ? undefined : '_blank'"
+          :download="lk.download ? '' : undefined"
           rel="noreferrer"
           class="text-default hover:text-primary flex justify-between py-1 text-sm no-underline
             transition-colors"
           @click="isOpen = false"
         >
-          <span>{{ lk.label }}</span>
-          <span class="text-xs">↗</span>
+          <span>{{ $t(lk.labelKey) }}</span>
+          <span class="text-xs">{{ lk.download ? '↓' : '↗' }}</span>
         </a>
       </div>
     </nav>
@@ -115,16 +116,17 @@ const navItems = [
   { id: 'about', key: 'about', num: '02' },
   { id: 'exp', key: 'experience', num: '03' },
   { id: 'stack', key: 'stack', num: '04' },
-  { id: 'web3', key: 'web3', num: '05' },
+  { id: 'projects', key: 'projects', num: '05' },
   { id: 'homelab', key: 'homelab', num: '06' },
   { id: 'vault', key: 'ai', num: '07' },
   { id: 'contact', key: 'contact', num: '08' },
 ]
 
-const links = [
-  { label: 'Email', href: 'mailto:edwinchanjy@hotmail.com' },
-  { label: 'GitHub', href: 'https://github.com/edwinchanjy' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jia-yu-chan-35a2671b1/' },
+const links: { labelKey: string; href: string; download?: boolean }[] = [
+  { labelKey: 'sidebar.linkEmail', href: 'mailto:edwinchanjy@hotmail.com' },
+  { labelKey: 'sidebar.linkGithub', href: 'https://github.com/edwinchanjy' },
+  { labelKey: 'sidebar.linkLinkedin', href: 'https://www.linkedin.com/in/jia-yu-chan-35a2671b1/' },
+  { labelKey: 'sidebar.linkResume', href: '/edwin-chan-jia-yu-resume.pdf', download: true },
 ]
 
 const isOpen = ref(false)

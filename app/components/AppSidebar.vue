@@ -83,15 +83,16 @@
       <div class="flex flex-col gap-1.5">
         <a
           v-for="lk in links"
-          :key="lk.label"
+          :key="lk.labelKey"
           :href="lk.href"
-          :target="lk.href.startsWith('mailto') ? undefined : '_blank'"
+          :target="lk.download || lk.href.startsWith('mailto') ? undefined : '_blank'"
+          :download="lk.download ? '' : undefined"
           rel="noreferrer"
           class="text-default hover:text-primary flex justify-between py-0.5 text-sm no-underline
             transition-colors"
         >
-          <span>{{ lk.label }}</span>
-          <span class="text-xs">↗</span>
+          <span>{{ $t(lk.labelKey) }}</span>
+          <span class="text-xs">{{ lk.download ? '↓' : '↗' }}</span>
         </a>
       </div>
     </div>
@@ -125,10 +126,11 @@ const navItems = [
   { id: 'contact', key: 'contact', num: '08' },
 ]
 
-const links = [
-  { label: 'Email', href: 'mailto:edwinchanjy@hotmail.com' },
-  { label: 'GitHub', href: 'https://github.com/edwinchanjy' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jia-yu-chan-35a2671b1/' },
+const links: { labelKey: string; href: string; download?: boolean }[] = [
+  { labelKey: 'sidebar.linkEmail', href: 'mailto:edwinchanjy@hotmail.com' },
+  { labelKey: 'sidebar.linkGithub', href: 'https://github.com/edwinchanjy' },
+  { labelKey: 'sidebar.linkLinkedin', href: 'https://www.linkedin.com/in/jia-yu-chan-35a2671b1/' },
+  { labelKey: 'sidebar.linkResume', href: '/edwin-chan-jia-yu-resume.pdf', download: true },
 ]
 
 function scrollTo(id: string) {

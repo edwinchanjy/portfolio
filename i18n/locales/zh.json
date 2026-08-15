@@ -21,6 +21,10 @@
     "location": "亚洲 · UTC+8",
     "statusAvailable": "可入职",
     "links": "链接",
+    "linkEmail": "邮箱",
+    "linkGithub": "GitHub",
+    "linkLinkedin": "LinkedIn",
+    "linkResume": "简历",
     "lightModeTitle": "切换浅色模式",
     "lightModeToast": "这里不搞浅色模式。",
     "lightModeToast2": "我们不搞浅色模式。它会引来Bug。"
@@ -35,6 +39,7 @@
     "headline4": "什么都自托管。结果花更多钱了。",
     "lede": "高级前端开发工程师 · 5年以上经验。我写的代码偶尔会按我的意愿运行。擅长将 Figma 设计转化为“差不多”的实现。",
     "ctaEmail": "联系我",
+    "ctaResume": "简历 ↓",
     "ctaGithub": "GitHub ↗",
     "ctaLinkedin": "LinkedIn ↗"
   },

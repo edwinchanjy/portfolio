@@ -21,6 +21,10 @@
     "location": "Asia · UTC+8",
     "statusAvailable": "available",
     "links": "Links",
+    "linkEmail": "Email",
+    "linkGithub": "GitHub",
+    "linkLinkedin": "LinkedIn",
+    "linkResume": "Resume",
     "lightModeTitle": "Switch to light mode",
     "lightModeToast": "No Light Mode Here.",
     "lightModeToast2": "We don't do light mode here. It attracts bugs."
@@ -35,6 +39,7 @@
     "headline4": "Self-hosts everything. Ends up paying more.",
     "lede": "Senior Frontend Developer · 5+ years of experience of centering div. I write code that occasionally does what I want. Specialized in turning Figma designs into 'close enough' implementations.",
     "ctaEmail": "Get in touch",
+    "ctaResume": "Resume ↓",
     "ctaGithub": "GitHub ↗",
     "ctaLinkedin": "LinkedIn ↗"
   },
