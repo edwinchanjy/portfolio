@@ -1,57 +1,45 @@
-﻿<template>
+<template>
   <section id="exp" class="fade-up mb-20 scroll-mt-8">
-    <!-- Section header -->
-    <div class="border-default mb-8 flex items-baseline gap-3.5 border-b pb-3.5">
-      <span class="text-label tracking-14 text-dimmed font-mono">03</span>
-      <span class="font-display text-muted text-xs font-semibold tracking-widest uppercase">
-        Experience
-      </span>
-    </div>
+    <AppSectionHeader num="03" label-key="nav.experience" />
 
-    <!-- Entries -->
-    <div
-      v-for="(entry, i) in entries"
-      :key="entry.key"
-      class="exp-row fade-up border-default border-b py-6"
-      :style="`transition-delay: ${i * 60}ms`"
-    >
-      <!-- Left: period + tags -->
-      <div class="pt-0.5">
-        <div class="text-dimmed font-mono text-xs leading-relaxed">
+    <div class="border-default flex flex-col gap-9 border-l pl-6 sm:pl-8">
+      <article v-for="(entry, i) in entries" :key="entry.key" class="fade-up relative">
+        <span
+          class="absolute top-1.5 -left-6 size-1.75 -translate-x-1/2 rounded-full sm:-left-8"
+          :class="i === 0 ? 'bg-primary' : 'bg-elevated'"
+          :style="
+            i === 0
+              ? 'box-shadow: 0 0 10px color-mix(in srgb, var(--ui-primary) 80%, transparent)'
+              : ''
+          "
+        />
+
+        <div class="font-mono text-xs" :class="i === 0 ? 'text-primary' : 'text-muted'">
           {{ $t(`experience.${entry.key}.period`) }}
         </div>
-        <div class="mt-2.5 flex flex-wrap gap-1">
-          <span
-            v-for="tag in entry.tags"
-            :key="tag"
-            class="border-accented bg-muted text-muted rounded border px-2.5 py-0.5 text-xs"
-          >
-            {{ tag }}
-          </span>
-        </div>
-      </div>
-
-      <!-- Right: role + bullets -->
-      <div>
-        <div
-          class="font-display text-highlighted text-xl leading-tight font-semibold tracking-tight"
+        <h3
+          class="font-display text-highlighted mt-2.5 text-xl leading-tight font-semibold
+            tracking-tight sm:text-2xl"
         >
           {{ $t(`experience.${entry.key}.role`) }}
-        </div>
-        <div class="text-muted mt-0.5 mb-3.5 text-sm">
+        </h3>
+        <div class="text-muted mt-1.5 mb-4 text-sm">
           {{ $t(`experience.${entry.key}.company`) }}
         </div>
-        <ul class="flex list-none flex-col gap-1.5 p-0">
+        <ul class="mb-4 flex max-w-2xl list-none flex-col gap-2.5 p-0">
           <li
             v-for="j in entry.bullets"
             :key="j"
-            class="text-default relative pl-4 text-sm leading-snug"
+            class="text-default relative pl-4 text-sm leading-relaxed"
           >
-            <span class="text-primary absolute left-0 text-base leading-snug">·</span>
+            <span class="text-primary absolute left-0">·</span>
             {{ $t(`experience.${entry.key}.bullet${j}`) }}
           </li>
         </ul>
-      </div>
+        <div class="text-dimmed text-2xs font-mono leading-loose">
+          {{ entry.tags.join(' · ') }}
+        </div>
+      </article>
     </div>
   </section>
 </template>
@@ -71,7 +59,7 @@ const entries: Entry[] = [
   },
   {
     key: 'entry2',
-    tags: ['Nuxt', 'Pinia', 'Tailwind', 'Web3', 'MetaMask', 'WalletConnect', 'ethers.js'],
+    tags: ['Nuxt', 'Pinia', 'Tailwind', 'Web3'],
     bullets: 3,
   },
   {
@@ -86,18 +74,3 @@ const entries: Entry[] = [
   },
 ]
 </script>
-
-<style scoped>
-.exp-row {
-  display: grid;
-  grid-template-columns: 190px 1fr;
-  gap: 36px;
-}
-
-@media (max-width: 639px) {
-  .exp-row {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-}
-</style>

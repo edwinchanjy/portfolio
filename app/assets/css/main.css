@@ -176,35 +176,23 @@ body {
   animation: dot-pulse 2s ease-in-out infinite;
 }
 
-/* Slide-up keyframes for cycling headline */
-@keyframes slide-up-out {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
+/* Cycling headline — Vue <Transition name="headline-slide">, both phrases
+   overlap (old sliding out while new slides in) since neither uses "mode". */
+.headline-slide-enter-active,
+.headline-slide-leave-active {
+  transition:
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes slide-up-in {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.headline-slide-enter-from {
+  opacity: 0;
+  transform: translateY(100%);
 }
 
-.headline-slide-out {
-  animation: slide-up-out 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-.headline-slide-in {
-  animation: slide-up-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+.headline-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
 }
 
 /* ─── Card hover lift ─────────────────────────────────────────── */
@@ -220,6 +208,53 @@ body {
   background-color: var(--ui-bg-elevated);
   border-color: var(--ui-border-accented);
   transform: translateY(-1px);
+}
+
+/* ─── Bezel (nested-panel depth card) ────────────────────────────
+   Outer frame sits at page background, inner panel sits one step
+   lighter — the "Depth" design's signature nested-container look. */
+
+.bezel {
+  border: 1px solid var(--ui-border);
+  background-color: var(--ui-bg);
+  border-radius: 1rem;
+  padding: 0.375rem;
+}
+
+.bezel-panel {
+  background-color: var(--ui-bg-muted);
+  border-radius: 0.75rem;
+}
+
+/* ─── Tile hover (project tiles, press buttons) ──────────────────
+   Border brightens toward primary and the tile lifts; a child
+   marked .tile-icon translates/scales in tandem. */
+
+.tile-hover {
+  transition:
+    border-color 0.3s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.tile-hover:hover {
+  border-color: color-mix(in srgb, var(--ui-primary) 28%, transparent);
+  transform: translateY(-3px);
+}
+
+.tile-icon {
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.tile-hover:hover .tile-icon {
+  transform: translate(2px, -2px) scale(1.06);
+}
+
+.press-link:active {
+  transform: scale(0.98);
+}
+
+.press-link:hover .tile-icon {
+  transform: translate(2px, -2px) scale(1.06);
 }
 
 /* ─── Sidebar nav active dot ──────────────────────────────────── */

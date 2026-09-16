@@ -1,115 +1,106 @@
-﻿<template>
-  <!-- Mobile top bar -->
-  <header
-    class="border-default bg-default fixed top-0 right-0 left-0 z-50 flex h-13 items-center gap-3
-      border-b px-5 lg:hidden"
-  >
-    <span class="font-display text-highlighted flex-1 text-base font-bold tracking-tight">
-      {{ $t('common.name') }}
-    </span>
-
-    <!-- Available indicator -->
-    <div class="flex items-center gap-2">
-      <span class="dot-pulse bg-success inline-block size-1.5 rounded-full" />
-      <span class="text-2xs text-success font-mono tracking-wider">
-        {{ $t('sidebar.statusAvailable') }}
+<template>
+  <div class="lg:hidden">
+    <header class="bg-muted fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between px-5">
+      <span class="font-display text-highlighted truncate text-sm font-bold tracking-tight">
+        {{ $t('common.name') }}
       </span>
-    </div>
 
-    <!-- Hamburger -->
-    <button
-      :aria-label="$t('mobile.openMenu')"
-      class="border-accented text-default flex cursor-pointer flex-col gap-1 rounded border
-        bg-transparent px-2 py-1.5"
-      @click="isOpen = !isOpen"
-    >
-      <span
-        v-for="i in [0, 1, 2]"
-        :key="i"
-        class="block h-px w-4.5 rounded-sm bg-current transition-transform"
-        :style="{
-          transform:
-            isOpen && i === 0
-              ? 'rotate(45deg) translate(4px,4px)'
-              : isOpen && i === 2
-                ? 'rotate(-45deg) translate(4px,-4px)'
-                : 'none',
-          opacity: isOpen && i === 1 ? 0 : 1,
-        }"
-      />
-    </button>
-  </header>
-
-  <!-- Overlay -->
-  <Transition name="fade">
-    <div
-      v-if="isOpen"
-      class="bg-default/85 fixed inset-0 top-13 z-40 backdrop-blur-sm lg:hidden"
-      @click="isOpen = false"
-    />
-  </Transition>
-
-  <!-- Drawer -->
-  <Transition name="slide-right">
-    <nav
-      v-if="isOpen"
-      class="border-default bg-muted fixed top-13 right-0 z-50 flex h-full w-65 flex-col
-        overflow-y-auto border-l px-6 pt-5 pb-8 lg:hidden"
-      @click.stop
-    >
-      <!-- Nav items -->
-      <div>
-        <button
-          v-for="item in navItems"
-          :key="item.id"
-          class="border-default grid w-full cursor-pointer items-center gap-2.5 border-0 border-t
-            bg-transparent py-3 text-left font-sans text-base transition-colors"
-          style="grid-template-columns: 26px 1fr 8px"
-          :class="activeSection === item.id ? 'text-highlighted' : 'text-muted'"
-          @click="navigate(item.id)"
-        >
-          <span
-            class="text-2xs font-mono tracking-wider"
-            :class="activeSection === item.id ? 'text-primary' : 'text-dimmed'"
-          >
-            {{ item.num }}
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5">
+          <span class="dot-pulse bg-success inline-block size-1.5 shrink-0 rounded-full" />
+          <span class="text-2xs text-success font-mono tracking-wider uppercase">
+            {{ $t('sidebar.statusAvailable') }}
           </span>
-          <span>{{ $t(`nav.${item.key}`) }}</span>
-          <span
-            class="inline-block size-1.5 justify-self-end rounded-full"
-            :class="activeSection === item.id ? 'bg-primary' : 'bg-transparent'"
-          />
+        </span>
+
+        <button
+          type="button"
+          class="text-highlighted flex size-8 shrink-0 cursor-pointer items-center justify-center
+            rounded-full transition-colors"
+          :class="isOpen ? 'bg-elevated' : 'hover:bg-elevated'"
+          :aria-expanded="isOpen"
+          aria-controls="mobile-nav-panel"
+          :aria-label="isOpen ? $t('mobile.closeMenu') : $t('mobile.openMenu')"
+          @click="isOpen = !isOpen"
+        >
+          <span class="relative block size-4">
+            <span
+              class="absolute left-0 block h-px w-4 rounded-full bg-current transition-transform"
+              :class="isOpen ? 'top-1/2 rotate-45' : 'top-1'"
+            />
+            <span
+              class="absolute top-1/2 left-0 block h-px w-4 rounded-full bg-current
+                transition-opacity"
+              :class="isOpen ? 'opacity-0' : 'opacity-100'"
+            />
+            <span
+              class="absolute left-0 block h-px w-4 rounded-full bg-current transition-transform"
+              :class="isOpen ? 'top-1/2 -rotate-45' : 'top-3'"
+            />
+          </span>
         </button>
       </div>
+    </header>
 
-      <!-- Links -->
-      <div class="border-default mt-auto border-t pt-5">
-        <div class="text-2xs tracking-14 text-dimmed mb-1 font-mono uppercase">
-          {{ $t('sidebar.links') }}
-        </div>
-        <a
-          v-for="lk in links"
-          :key="lk.labelKey"
-          :href="lk.href"
-          :target="lk.download || lk.href.startsWith('mailto') ? undefined : '_blank'"
-          :download="lk.download ? '' : undefined"
-          rel="noreferrer"
-          class="text-default hover:text-primary flex justify-between py-1 text-sm no-underline
-            transition-colors"
-          @click="isOpen = false"
+    <Transition name="mobile-panel">
+      <div v-if="isOpen" class="fixed inset-0 top-14 z-40" @click="isOpen = false">
+        <div class="bg-default/70 absolute inset-0" />
+        <nav
+          id="mobile-nav-panel"
+          class="bg-muted relative flex max-h-[calc(100dvh-3.5rem)] flex-col gap-0.5 overflow-y-auto
+            px-5 pt-3 pb-6"
+          aria-label="Sections"
+          @click.stop
         >
-          <span>{{ $t(lk.labelKey) }}</span>
-          <span class="text-xs">{{ lk.download ? '↓' : '↗' }}</span>
-        </a>
+          <button
+            v-for="item in navItems"
+            :key="item.id"
+            class="flex cursor-pointer items-baseline gap-2.5 rounded-full px-3 py-2.5 text-left
+              font-sans text-sm transition-colors"
+            :class="
+              activeSection === item.id
+                ? 'bg-primary/10 text-highlighted'
+                : 'text-muted hover:text-default'
+            "
+            @click="navigate(item.id)"
+          >
+            <span
+              class="text-2xs font-mono transition-colors"
+              :class="activeSection === item.id ? 'text-primary' : 'text-dimmed'"
+            >
+              {{ item.num }}
+            </span>
+            {{ $t(`nav.${item.key}`) }}
+          </button>
+
+          <div class="mt-4 flex flex-col gap-3 px-3">
+            <a
+              v-for="lk in links"
+              :key="lk.labelKey"
+              :href="lk.href"
+              :target="lk.download || lk.href.startsWith('mailto') ? undefined : '_blank'"
+              :download="lk.download ? '' : undefined"
+              rel="noreferrer"
+              class="text-default hover:text-primary inline-flex items-center gap-2 text-sm
+                no-underline transition-colors"
+              @click="isOpen = false"
+            >
+              <UIcon v-if="lk.icon" :name="lk.icon" class="size-3.5 opacity-70" />
+              <span>{{ $t(lk.labelKey) }}</span>
+            </a>
+          </div>
+        </nav>
       </div>
-    </nav>
-  </Transition>
+    </Transition>
+  </div>
 </template>
 
 <script setup lang="ts">
 defineProps<{
   activeSection: string
 }>()
+
+const isOpen = ref(false)
 
 const navItems = [
   { id: 'intro', key: 'intro', num: '01' },
@@ -122,37 +113,68 @@ const navItems = [
   { id: 'contact', key: 'contact', num: '08' },
 ]
 
-const links: { labelKey: string; href: string; download?: boolean }[] = [
-  { labelKey: 'sidebar.linkEmail', href: 'mailto:edwinchanjy@hotmail.com' },
-  { labelKey: 'sidebar.linkGithub', href: 'https://github.com/edwinchanjy' },
-  { labelKey: 'sidebar.linkLinkedin', href: 'https://www.linkedin.com/in/jia-yu-chan-35a2671b1/' },
-  { labelKey: 'sidebar.linkResume', href: '/edwin-chan-jia-yu-resume.pdf', download: true },
+const links: { labelKey: string; href: string; download?: boolean; icon?: string }[] = [
+  {
+    labelKey: 'sidebar.linkGithub',
+    href: 'https://github.com/edwinchanjy',
+    icon: 'i-local-github',
+  },
+  {
+    labelKey: 'sidebar.linkLinkedin',
+    href: 'https://www.linkedin.com/in/jia-yu-chan-35a2671b1/',
+    icon: 'i-local-linkedin',
+  },
+  {
+    labelKey: 'sidebar.linkResume',
+    href: '/edwin-chan-jia-yu-resume.pdf',
+    icon: 'i-local-download',
+    download: true,
+  },
 ]
-
-const isOpen = ref(false)
 
 function navigate(id: string) {
   isOpen.value = false
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
+
+function closeOnEscape(e: KeyboardEvent) {
+  if (e.key === 'Escape') isOpen.value = false
+}
+
+onMounted(() => window.addEventListener('keydown', closeOnEscape))
+onUnmounted(() => window.removeEventListener('keydown', closeOnEscape))
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s ease;
+.mobile-panel-enter-active,
+.mobile-panel-leave-active {
+  transition: opacity 0.18s ease;
 }
-.fade-enter-from,
-.fade-leave-to {
+
+.mobile-panel-enter-active > nav,
+.mobile-panel-leave-active > nav {
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-panel-enter-from,
+.mobile-panel-leave-to {
   opacity: 0;
 }
 
-.slide-right-enter-active,
-.slide-right-leave-active {
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+.mobile-panel-enter-from > nav,
+.mobile-panel-leave-to > nav {
+  opacity: 0;
+  transform: translateY(-6px);
 }
-.slide-right-enter-from,
-.slide-right-leave-to {
-  transform: translateX(100%);
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-panel-enter-active,
+  .mobile-panel-leave-active,
+  .mobile-panel-enter-active > nav,
+  .mobile-panel-leave-active > nav {
+    transition: none;
+  }
 }
 </style>

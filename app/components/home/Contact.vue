@@ -1,62 +1,41 @@
-﻿<template>
-  <section id="contact" class="fade-up mb-20 scroll-mt-8">
-    <!-- Section header -->
-    <div class="border-default mb-8 flex items-baseline gap-3.5 border-b pb-3.5">
-      <span class="text-label tracking-14 text-dimmed font-mono">08</span>
-      <span class="font-display text-muted text-xs font-semibold tracking-widest uppercase">
-        Contact
-      </span>
-    </div>
+<template>
+  <section id="contact" class="fade-up mb-12 scroll-mt-8">
+    <AppSectionHeader num="08" label-key="nav.contact" />
 
-    <h3 class="font-display text-highlighted mb-7 text-5xl leading-none font-bold tracking-tight">
+    <h3
+      class="font-display text-highlighted text-section-h3 sm:text-section-h3 mb-8 max-w-[20ch]
+        leading-none font-bold tracking-tight"
+    >
       {{ $t('contact.heading') }}
     </h3>
 
-    <!-- Links grid -->
-    <div class="contact-grid mb-9 text-base">
-      <template v-for="lk in links" :key="lk.labelKey">
-        <span class="text-dimmed pt-0.5 text-xs">{{ $t(lk.labelKey) }}</span>
-        <a
-          :href="lk.href"
-          :target="lk.href.startsWith('mailto') ? undefined : '_blank'"
-          rel="noreferrer"
-          class="hover:text-primary text-base no-underline transition-colors"
-          :class="lk.accent ? 'text-primary' : 'text-highlighted'"
-        >
-          {{ lk.val }}
-        </a>
-      </template>
+    <div class="mb-9 flex flex-wrap items-center gap-x-7 gap-y-3.5">
+      <AppPillLink
+        href="mailto:edwinchanjy@hotmail.com"
+        label="edwinchanjy@hotmail.com"
+        icon="up-right"
+        variant="accent"
+      />
+      <a
+        href="https://github.com/edwinchanjy"
+        target="_blank"
+        rel="noreferrer"
+        class="text-default hover:text-primary inline-flex items-center gap-2 text-base no-underline
+          transition-colors"
+      >
+        <UIcon name="i-local-github" class="size-4 opacity-70" />
+        github.com/edwinchanjy
+      </a>
+      <a
+        href="https://www.linkedin.com/in/jia-yu-chan-35a2671b1/"
+        target="_blank"
+        rel="noreferrer"
+        class="text-default hover:text-primary inline-flex items-center gap-2 text-base no-underline
+          transition-colors"
+      >
+        <UIcon name="i-local-linkedin" class="size-4 opacity-70" />
+        /in/jia-yu-chan
+      </a>
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-const links = [
-  {
-    labelKey: 'contact.emailLabel',
-    val: 'edwinchanjy@hotmail.com',
-    href: 'mailto:edwinchanjy@hotmail.com',
-    accent: true,
-  },
-  {
-    labelKey: 'contact.githubLabel',
-    val: 'github.com/edwinchanjy',
-    href: 'https://github.com/edwinchanjy',
-    accent: false,
-  },
-  {
-    labelKey: 'contact.linkedinLabel',
-    val: '/in/jia-yu-chan',
-    href: 'https://www.linkedin.com/in/jia-yu-chan-35a2671b1/',
-    accent: false,
-  },
-]
-</script>
-
-<style scoped>
-.contact-grid {
-  display: grid;
-  grid-template-columns: 88px 1fr;
-  row-gap: 14px;
-}
-</style>

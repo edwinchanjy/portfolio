@@ -1,12 +1,6 @@
-﻿<template>
+<template>
   <section id="vault" class="fade-up mb-20 scroll-mt-8">
-    <!-- Section header -->
-    <div class="border-default mb-8 flex items-baseline gap-3.5 border-b pb-3.5">
-      <span class="text-label tracking-14 text-dimmed font-mono">07</span>
-      <span class="font-display text-muted text-xs font-semibold tracking-widest uppercase">
-        AI Workflow
-      </span>
-    </div>
+    <AppSectionHeader num="07" label-key="nav.ai" />
 
     <h3
       class="font-display text-section-h3 text-highlighted mb-3.5 leading-tight font-bold
@@ -16,32 +10,30 @@
       <br />
       {{ $t('ai.heading2') }}
     </h3>
-    <p class="text-default mb-6 text-base leading-relaxed">{{ $t('ai.desc') }}</p>
+    <p class="text-default mb-6 max-w-2xl text-base leading-relaxed">{{ $t('ai.desc') }}</p>
 
-    <!-- 3 tool cards -->
-    <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
-      <UCard
+    <div class="flex flex-col gap-4">
+      <div
         v-for="tool in tools"
         :key="tool.nameKey"
-        :ui="{
-          root: 'card-hover bg-muted border border-default rounded-lg flex flex-col',
-          body: 'flex flex-col gap-3 py-5 px-6 sm:py-5 sm:px-6 flex-1',
-        }"
+        class="border-default bg-muted flex flex-wrap gap-6 rounded-2xl border p-5 sm:p-7"
       >
-        <div class="flex items-center justify-between">
-          <UIcon :name="tool.icon" class="size-8" />
-          <span class="text-2xs text-muted font-mono tracking-widest uppercase">
+        <div class="w-38 flex-none">
+          <UIcon :name="tool.icon" class="text-primary mb-3 size-6" />
+          <div class="font-display text-highlighted text-lg font-semibold tracking-tight">
+            {{ $t(tool.nameKey) }}
+          </div>
+          <div class="text-dimmed text-2xs mt-1.5 font-mono tracking-wider uppercase">
             {{ $t(tool.tagKey) }}
-          </span>
+          </div>
         </div>
-        <div class="font-display text-highlighted text-xl font-bold tracking-tight">
-          {{ $t(tool.nameKey) }}
+        <div class="min-w-0 flex-1 basis-80">
+          <p class="text-default mb-3 max-w-2xl text-base leading-relaxed">
+            {{ $t(tool.descKey) }}
+          </p>
+          <p class="text-dimmed max-w-2xl text-sm leading-relaxed">{{ $t(tool.soloKey) }}</p>
         </div>
-        <div class="text-default text-sm leading-relaxed">{{ $t(tool.descKey) }}</div>
-        <div class="border-default text-muted mt-auto border-t pt-3 text-xs leading-snug italic">
-          {{ $t(tool.soloKey) }}
-        </div>
-      </UCard>
+      </div>
     </div>
   </section>
 </template>

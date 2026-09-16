@@ -1,57 +1,44 @@
 <template>
   <section id="projects" class="fade-up mb-20 scroll-mt-8">
-    <!-- Section header -->
-    <div class="border-default mb-8 flex items-baseline gap-3.5 border-b pb-3.5">
-      <span class="text-label tracking-14 text-dimmed font-mono">05</span>
-      <span class="font-display text-muted text-xs font-semibold tracking-widest uppercase">
-        Projects
-      </span>
-    </div>
+    <AppSectionHeader num="05" label-key="nav.projects" />
 
     <h3
-      class="font-display text-section-h3 text-highlighted mb-3.5 leading-tight font-bold
-        tracking-tight"
+      class="font-display text-section-h3 text-highlighted mb-3.5 max-w-[22ch] leading-tight
+        font-bold tracking-tight"
     >
       {{ $t('projects.heading') }}
     </h3>
-    <p class="text-default mb-5 text-base leading-relaxed">{{ $t('projects.desc') }}</p>
+    <p class="text-default mb-5 max-w-2xl text-base leading-relaxed">{{ $t('projects.desc') }}</p>
 
-    <!-- 2×2 cards -->
-    <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
-      <UCard
-        v-for="(project, i) in projects"
-        :key="i"
-        class="card-hover"
-        :ui="{
-          root: 'bg-muted border border-default rounded-lg card-hover',
-          body: 'py-3.5 px-4 sm:py-3.5 sm:px-4',
-        }"
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <a
+        v-for="project in projects"
+        :key="project.key"
+        :href="project.href"
+        target="_blank"
+        rel="noreferrer"
+        class="bezel tile-hover no-underline"
       >
-        <!-- Header -->
-        <div class="mb-3 flex items-start justify-between gap-3">
-          <h3
-            class="text-base font-semibold"
-            style="color: var(--text-1); font-family: var(--font-display); letter-spacing: -0.01em"
-          >
-            {{ project.name }}
-          </h3>
+        <div class="bezel-panel flex min-h-38 flex-col justify-between gap-6 p-5 sm:p-6.5">
+          <div class="flex items-start justify-between gap-3.5">
+            <span
+              class="font-display text-highlighted text-xl leading-tight font-semibold
+                tracking-tight"
+            >
+              {{ project.name }}
+            </span>
+            <span
+              class="tile-icon bg-elevated text-primary inline-flex size-7.5 shrink-0 items-center
+                justify-center rounded-full font-mono text-xs"
+            >
+              <UIcon name="i-local-arrow-up-right" />
+            </span>
+          </div>
+          <div class="text-muted text-2xs font-mono leading-loose">
+            {{ project.tech.join(' · ') }}
+          </div>
         </div>
-
-        <!-- Description -->
-        <p
-          class="mb-4 flex-1 text-sm leading-relaxed"
-          style="color: var(--text-2); line-height: 1.75"
-        >
-          {{ project.desc }}
-        </p>
-
-        <!-- Tech chips -->
-        <div class="flex flex-wrap gap-1.5">
-          <UBadge v-for="tech in project.tech" :key="tech" variant="subtle">
-            {{ tech }}
-          </UBadge>
-        </div>
-      </UCard>
+      </a>
     </div>
   </section>
 </template>
@@ -61,25 +48,25 @@ const projects = [
   {
     key: 'e03',
     name: 'e03',
-    desc: 'An E-commerce web app built with Nuxt 3, featuring crypto as a payment.',
-    tech: ['Nuxt', 'ethers.js', 'Wallet Connect', 'MetaMask', 'TypeScript'],
+    href: 'https://github.com/edwinchanjy',
+    tech: ['Nuxt', 'ethers.js', 'WalletConnect', 'MetaMask', 'TypeScript'],
   },
   {
     key: 'nexus-realty-hub',
     name: 'Nexus Realty Hub',
-    desc: 'Crypto-based real estate investment built with Nuxt 3, integrating blockchain for secure transactions.',
-    tech: ['Nuxt', 'ethers.js', 'Wallet Connect', 'MetaMask', 'TypeScript'],
+    href: 'https://github.com/edwinchanjy',
+    tech: ['Nuxt', 'ethers.js', 'WalletConnect', 'MetaMask', 'TypeScript'],
   },
   {
     key: 'travel-log',
     name: 'Travel Log',
-    desc: 'An Itinerary planner and journal app built with Nuxt 3, allowing users to document and share their travel experiences.',
+    href: 'https://github.com/edwinchanjy',
     tech: ['Nuxt', 'TypeScript', 'Python', 'Flask', 'SQLite'],
   },
   {
     key: 'survey-app',
     name: 'Survey App',
-    desc: 'A survey application built with Nuxt 3, allowing users to create and participate in surveys.',
+    href: 'https://github.com/edwinchanjy',
     tech: ['Nuxt', 'Angular', 'NestJs', 'SurveyJs'],
   },
 ]

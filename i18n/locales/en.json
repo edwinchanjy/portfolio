@@ -18,19 +18,14 @@
   },
   "sidebar": {
     "role": "Senior Frontend Developer",
-    "location": "Asia · UTC+8",
     "statusAvailable": "available",
-    "links": "Links",
-    "linkEmail": "Email",
     "linkGithub": "GitHub",
     "linkLinkedin": "LinkedIn",
-    "linkResume": "Resume",
-    "lightModeTitle": "Switch to light mode",
-    "lightModeToast": "No Light Mode Here.",
-    "lightModeToast2": "We don't do light mode here. It attracts bugs."
+    "linkResume": "Resume"
   },
   "mobile": {
-    "openMenu": "Open navigation menu"
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
   },
   "hero": {
     "headline1": "Senior Frontend Developer, I think.",
@@ -38,10 +33,7 @@
     "headline3": "Have deployed on Friday. Have survived. Mostly.",
     "headline4": "Self-hosts everything. Ends up paying more.",
     "lede": "Senior Frontend Developer · 5+ years of experience of centering div. I write code that occasionally does what I want. Specialized in turning Figma designs into 'close enough' implementations.",
-    "ctaEmail": "Get in touch",
-    "ctaResume": "Resume ↓",
-    "ctaGithub": "GitHub ↗",
-    "ctaLinkedin": "LinkedIn ↗"
+    "ctaEmail": "Get in touch"
   },
   "about": {
     "heading1": "Five years in.",
