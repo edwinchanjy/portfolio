@@ -1,0 +1,39 @@
+# Local environment and credentials (keep documented examples)
+**/.env
+**/.env.*
+!**/.env.example
+**/.aws
+**/.ssh
+**/.docker
+**/*.key
+**/*.pem
+
+# Version control and repository tooling
+**/.git
+.github
+.claude
+.agents
+.codex
+
+# Dependencies, caches, and generated output
+**/node_modules
+**/.pnpm-store
+**/.npm
+**/.nuxt
+**/.output
+**/.nitro
+**/.data
+**/.cache
+**/dist
+**/coverage
+
+# Local logs, editor settings, and OS files
+**/logs
+**/*.log
+**/.vscode
+**/.idea
+**/.fleet
+**/*.swp
+**/*.swo
+**/.DS_Store
+**/Thumbs.db
